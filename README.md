@@ -22,7 +22,7 @@ This project is a simple yet visually appealing "Hello World" web application bu
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/shaansuraj/simple-task-celebal.git
-   cd hello-world-app
+   cd simple-task-celebal
 
 2. **Install Dependencies**
     npm install
