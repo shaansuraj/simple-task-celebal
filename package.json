@@ -1,12 +1,13 @@
 {
   "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
     "express": "^4.19.2"
   },
   "name": "simple-task-celebal",
   "version": "1.0.0",
   "description": "A simple \"Hello World!\" application using NodeJS",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/shaansuraj/simple-task-celebal/issues"
   },
-  "homepage": "https://github.com/shaansuraj/simple-task-celebal#readme"
+  "homepage": "https://github.com/shaansuraj/simple-task-celebal#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
+  }
 }
