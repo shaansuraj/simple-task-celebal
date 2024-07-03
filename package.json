@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "name": "simple-task-celebal",
+  "version": "1.0.0",
+  "description": "A simple \"Hello World!\" application using NodeJS",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaansuraj/simple-task-celebal.git"
+  },
+  "keywords": [
+    "hello",
+    "world",
+    "nodejs",
+    "simple",
+    "task",
+    "celebal"
+  ],
+  "author": "Shaan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaansuraj/simple-task-celebal/issues"
+  },
+  "homepage": "https://github.com/shaansuraj/simple-task-celebal#readme"
+}
