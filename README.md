@@ -40,11 +40,12 @@ This project is a simple yet visually appealing "Hello World" web application bu
 
 
 ## Project Structure
+```
 hello-world/
 ├── controllers/
-│   ├── messageController.js
+│   └── messageController.js
 ├── routes/
-│   ├── messageRoutes.js
+│   └── messageRoutes.js
 ├── views/
 │   └── index.ejs
 ├── public/
@@ -58,6 +59,8 @@ hello-world/
 │   └── review.js
 ├── index.js
 └── package.json
+```
+
 
 
 ## Usage
