@@ -4,113 +4,125 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow: hidden;
     background-color: #000;
-  }
-  
-  .galaxy-background {
+}
+
+.galaxy-background {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
-  }
-  
-  .container {
+}
+
+.container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 600px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
+    width: 300px;
+    height: 200px;
+    background: radial-gradient(circle, #000 10%, #111 80%);
+    border-radius: 50%;
     text-align: center;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 1s ease-in-out;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    animation: pulse 2s ease-in-out infinite alternate;
     z-index: 1;
-    background: url('https://www.publicdomainpictures.net/pictures/260000/nahled/grey-lunar-moon-surface-texture.jpg') no-repeat center center;
-    background-size: cover;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    100% {
+        transform: translate(-50%, -50%) scale(1.05);
     }
-  }
-  
-  h1 {
-    color: #007bff;
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  }
-  
-  p {
-    color: #333;
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  }
-  
-  button {
+}
+
+h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-top: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    color: #fff;
+    font-size: 1rem;
+    margin: 10px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+button {
     background: linear-gradient(145deg, #0062cc, #0056b3);
     border: none;
     color: white;
     padding: 12px 24px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-  }
-  
-  button:active {
+}
+
+button:active {
     transform: translateY(1px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  #messageContainer {
-    margin-top: 20px;
+}
+
+#messageContainer {
+    margin-top: 10px;
     padding: 10px;
     background: rgba(0, 123, 255, 0.1);
     border: 1px solid #007bff;
     border-radius: 5px;
     display: none;
-  }
-  
-  #messageContainer.show {
-    display: block;
-  }
-  
-  #messageText {
-    font-size: 1.5rem;
-    color: #007bff;
-  }
-  
-  /* Galaxy Background - Stars */
-  @keyframes twinkling {
-    0%, 100% { opacity: 0.2; }
-    50% { opacity: 1; }
-  }
-  
-  @keyframes move {
+    animation: fall 2s ease-out forwards;
+}
+
+@keyframes fall {
     0% {
-      transform: translateY(0) translateX(0);
+        opacity: 0;
+        transform: translateY(-200px) scale(0.5);
     }
     100% {
-      transform: translateY(-100vh) translateX(100vw);
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
-  }
-  
-  .star {
+}
+
+#messageContainer.show {
+    display: block;
+}
+
+#messageText {
+    font-size: 1rem;
+    color: #007bff;
+}
+
+/* Galaxy Background - Stars */
+@keyframes twinkling {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100vw);
+    }
+}
+
+.star {
     position: absolute;
     background: white;
     width: 2px;
@@ -119,29 +131,29 @@ body {
     border-radius: 50%;
     animation: twinkling 5s infinite ease-in-out, move 20s infinite linear;
     z-index: 0;
-  }
-  
-  .star.blue {
+}
+
+.star.blue {
     background: blue;
-  }
-  
-  .star.red {
+}
+
+.star.red {
     background: red;
-  }
-  
-  .star:nth-child(odd) {
+}
+
+.star:nth-child(odd) {
     animation-duration: 7s, 25s;
-  }
-  
-  .star:nth-child(even) {
+}
+
+.star:nth-child(even) {
     animation-duration: 9s, 30s;
-  }
-  
-  .star:nth-child(3n) {
+}
+
+.star:nth-child(3n) {
     animation-duration: 4s, 20s;
-  }
-  
-  .galaxy-background::before {
+}
+
+.galaxy-background::before {
     content: '';
     position: absolute;
     top: 0;
@@ -150,5 +162,4 @@ body {
     height: 100%;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 60%);
     z-index: 0;
-  }
-  
+}
