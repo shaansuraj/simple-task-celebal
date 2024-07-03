@@ -1,43 +1,56 @@
 body {
-    background-color: #f8f9fa;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    background-color: #000;
+  }
+  
+  .galaxy-background {
+    position: relative;
+    width: 100%;
     height: 100vh;
+    overflow: hidden;
   }
   
   .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     max-width: 600px;
-    background: white;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 8px;
     text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     animation: fadeIn 1s ease-in-out;
+    z-index: 1;
+    background: url('https://www.publicdomainpictures.net/pictures/260000/nahled/grey-lunar-moon-surface-texture.jpg') no-repeat center center;
+    background-size: cover;
   }
   
   @keyframes fadeIn {
     from {
       opacity: 0;
+      transform: translateY(-20px);
     }
     to {
       opacity: 1;
+      transform: translateY(0);
     }
   }
   
   h1 {
     color: #007bff;
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   }
   
   p {
-    color: #555;
-    font-size: 1.2rem;
+    color: #333;
+    font-size: 1.5rem;
     margin-bottom: 30px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }
@@ -46,30 +59,30 @@ body {
     background: linear-gradient(145deg, #0062cc, #0056b3);
     border: none;
     color: white;
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 12px 24px;
+    font-size: 1.2rem;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
   }
   
   button:hover {
     transform: translateY(-3px);
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
   }
   
   button:active {
     transform: translateY(1px);
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
   
   #messageContainer {
     margin-top: 20px;
     padding: 10px;
+    background: rgba(0, 123, 255, 0.1);
     border: 1px solid #007bff;
     border-radius: 5px;
-    background: #e9f7fe;
     display: none;
   }
   
@@ -78,7 +91,64 @@ body {
   }
   
   #messageText {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #007bff;
+  }
+  
+  /* Galaxy Background - Stars */
+  @keyframes twinkling {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    100% {
+      transform: translateY(-100vh) translateX(100vw);
+    }
+  }
+  
+  .star {
+    position: absolute;
+    background: white;
+    width: 2px;
+    height: 2px;
+    opacity: 0.8;
+    border-radius: 50%;
+    animation: twinkling 5s infinite ease-in-out, move 20s infinite linear;
+    z-index: 0;
+  }
+  
+  .star.blue {
+    background: blue;
+  }
+  
+  .star.red {
+    background: red;
+  }
+  
+  .star:nth-child(odd) {
+    animation-duration: 7s, 25s;
+  }
+  
+  .star:nth-child(even) {
+    animation-duration: 9s, 30s;
+  }
+  
+  .star:nth-child(3n) {
+    animation-duration: 4s, 20s;
+  }
+  
+  .galaxy-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 60%);
+    z-index: 0;
   }
   
